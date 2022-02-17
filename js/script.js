@@ -1,5 +1,9 @@
 
-
+function calculate(num1,num2,num3){
+    const Balance=document.getElementById(num1);
+    const balanceValue=parseInt(Balance.innerText);
+    Balance.innerText=num2-num3;
+}
 
 document.getElementById('calculate').addEventListener('click',function(){
     const income=document.getElementById('income');
@@ -20,11 +24,12 @@ document.getElementById('calculate').addEventListener('click',function(){
     const inTotalExpences=foodValue+rentValue+clothesValue;
     
     totalExpenses.innerText=inTotalExpences;
+    calculate('balance',incomeValue,inTotalExpences);
 
-    const Balance=document.getElementById('balance');
+    /* const Balance=document.getElementById('balance');
     const balanceValue=parseInt(Balance.innerText);
     
-    Balance.innerText=incomeValue-inTotalExpences;
+    Balance.innerText=incomeValue-inTotalExpences; */
     
     
 });
@@ -42,10 +47,10 @@ document.getElementById('save').addEventListener('click',function(){
     savingAmaunt.innerText=totalSave;
 
     const Balance=document.getElementById('balance');
-    const balanceValue=parseInt(Balance.innerText);
+    const balanceValue=parseInt(Balance.innerText);/* 
 
     const remainingBalance=document.getElementById('remaining');
-    debugger;
-    remainingBalance.innerText=balanceValue-totalSave;
+    remainingBalance.innerText=balanceValue-totalSave; */
+    calculate('remaining',balanceValue,totalSave);
     
 });
