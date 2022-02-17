@@ -5,65 +5,77 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Money Calculet</title>
+    <!-- tailwindcss  -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- custom css -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1 class="text-5xl font-bold text-cyan-500 text-center my-6">Money Master</h1>
-    </header>
-    <main>
-        <section class="w-11/12 mx-auto lg:grid grid-cols-2 gap-10 ">
-            <div class="image_area">
-                <img src="images/money.png" alt="">
+    <!-- header area  -->
+<header>
+     <h1 class="text-5xl font-bold text-cyan-500 text-center my-6">Money Master</h1>
+</header>
+     <!-- header area  -->
+<main>
+    <section class="w-11/12 mx-auto lg:grid grid-cols-2 gap-10 ">
+        <div class="image_area">
+            <img src="images/money.png" alt="">
+        </div>
+         <div class="info_area">
+             <div class="text-center">
+                <h2 class="text-2xl font-bold mt-8 mb-4">Income</h2>
+
+                <!-- income area  -->
+        <div>
+            <label class="text-xl" for="income">Income:</label>
+                <input class="py-2 px-4 bg-slate-200" type="number" id="income">
+        </div>
+        <!-- Expenses area  -->
+        <div>
+            <h2 class="text-2xl font-bold mt-8 mb-4">Expenses</h2>
+         <!-- Expenses fild -->
+
+            <div class="mb-4">
+                <label class="inline-block w-10 text-right mr-5">Food:</label>
+                 <input id="food" class="py-2 px-4 bg-slate-200" type="number" />
             </div>
-            <div class="info_area">
-                <div class="text-center">
-                    <h2 class="text-2xl font-bold mt-8 mb-4">Income</h2>
-
-                    <!-- income area  -->
-                    <div>
-                        <label class="text-xl" for="income">Income:</label>
-                        <input class="py-2 px-4 bg-slate-200" type="number" id="income">
-                    </div>
-                    <!-- Expenses area  -->
-                    <div>
-                        <h2 class="text-2xl font-bold mt-8 mb-4">Expenses</h2>
-                        <!-- Expenses fild -->
-
-                        <div class="mb-4">
-                            <label class="inline-block w-10 text-right mr-5">Food:</label>
-                            <input id="food" class="py-2 px-4 bg-slate-200" type="number" />
-                          </div>
-                          <div class="mb-4">
-                            <label class="inline-block w-10 text-right mr-5">Rent:</label>
-                            <input id="rent" class="py-2 px-4 bg-slate-200" type="number"/>
-                          </div>
-                          <div class="mb-4">
-                            <label class="inline-block w-10 text-right mr-5">Clothes:</label>
-                            <input id="clothes" class="py-2 px-4 bg-slate-200" type="number" /> 
-                          </div>
-                          <button id="calculate" class="bg-sky-600 text-white rounded-lg py-2 px-12 font-bold">Calculate</button>
+            <div class="mb-4">
+                <label class="inline-block w-10 text-right mr-5">Rent:</label>
+                <input id="rent" class="py-2 px-4 bg-slate-200 " type="number"/>
+             </div>
+            <div class="mb-4">
+                 <label class="inline-block w-10 text-right mr-5">Clothes:</label>
+                 <input id="clothes" class="py-2 px-4 bg-slate-200" type="number" /> 
+             </div>
+                <button id="calculate" class="bg-sky-600 text-white rounded-lg py-2 px-12 font-bold">Calculate</button>
                         
-                    </div>
-                    <!-- error -->
-                    <p id="error" class="hidden text-red-500">error:Spend more than your original money</p>
-                      <!-- Expenses area end -->
-                      <h2 class="text-2xl font-medium mt-8 mb-4">Total Expenses:<span id="total-expenses">0</span></h2>
-                      <h2 class="text-2xl font-medium mt-8 mb-4">Balance:<span id="balance">0</span></h2>
-                </div>
-                
-                <div class="my-4 text-center">
-                    <label class="inline-block  text-right mr-5">Save:</label>
-                    <input id="saveinput" class="py-2 px-2 bg-slate-200 w-14" type="number" /> % <button id="save" class="bg-sky-600 text-white rounded-lg py-2 px-12 font-bold">Save</button>
-                    <h2 class="text-2xl font-medium mt-5 mb-4">Saving Amount: <span id="Saving">0</span></h2>
-                    <h2 class="text-2xl font-medium mt-5 mb-4">Remaining Balance: <span id="remaining">0</span></h2>
-                  </div>
-                 
             </div>
+            <!-- error -->
+                <p id="error" class="hidden text-red-500 font-medium">error:Spend more than your original money</p>
+                 <p id="errorValid" class="hidden text-red-500 font-medium">error:please type valid number</p>
+            <!-- Expenses area end -->
+                <h2 class="text-2xl font-medium mt-8 mb-4">Total Expenses:<span id="total-expenses">0</span></h2>
+                <h2 class="text-2xl font-medium mt-8 mb-4">Balance:<span id="balance">0</span></h2>
+             </div>
+                
+        <div class="my-4 text-center">
+            <!-- savaing area section  -->
+            <label class="inline-block  text-right mr-5">Save:</label>
+            <input id="saveinput" class="py-2 px-2 bg-slate-200 w-14" type="number" /> % <button id="save" class="bg-sky-600 text-white rounded-lg py-2 px-12 font-bold">Save</button>
+         <!-- error -->
+        <p id="saveing-error" class="hidden text-red-500 font-medium">error:Sorry!!There is not enough money in your account to saveing</p>
+        <!-- amount area  -->
+         <h2 class="text-2xl font-medium mt-5 mb-4">Saving Amount: <span id="Saving">0</span></h2>
+
+         <!-- balance area  -->
+        <h2 class="text-2xl font-medium mt-5 mb-4">Remaining Balance: <span id="remaining">0</span></h2>
+                    
+         </div>
+                 
+        </div>
         </section>
     </main>
-
+    <!-- custom js  -->
     <script src="js/script.js"></script>
 </body>
 </html>
