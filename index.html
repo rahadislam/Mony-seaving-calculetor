@@ -24,7 +24,7 @@
                     <!-- income area  -->
                     <div>
                         <label class="text-xl" for="income">Income:</label>
-                        <input class="py-2 px-4 bg-slate-200" type="text" id="income">
+                        <input class="py-2 px-4 bg-slate-200" type="number" id="income">
                     </div>
                     <!-- Expenses area  -->
                     <div>
@@ -33,19 +33,21 @@
 
                         <div class="mb-4">
                             <label class="inline-block w-10 text-right mr-5">Food:</label>
-                            <input id="food" class="py-2 px-4 bg-slate-200" type="text" />
+                            <input id="food" class="py-2 px-4 bg-slate-200" type="number" />
                           </div>
                           <div class="mb-4">
                             <label class="inline-block w-10 text-right mr-5">Rent:</label>
-                            <input id="rent" class="py-2 px-4 bg-slate-200" type="text" />
+                            <input id="rent" class="py-2 px-4 bg-slate-200" type="number"/>
                           </div>
                           <div class="mb-4">
                             <label class="inline-block w-10 text-right mr-5">Clothes:</label>
-                            <input id="clothes" class="py-2 px-4 bg-slate-200" type="text" /> 
+                            <input id="clothes" class="py-2 px-4 bg-slate-200" type="number" /> 
                           </div>
                           <button id="calculate" class="bg-sky-600 text-white rounded-lg py-2 px-12 font-bold">Calculate</button>
                         
                     </div>
+                    <!-- error -->
+                    <p id="error" class="hidden text-red-500">error:Spend more than your original money</p>
                       <!-- Expenses area end -->
                       <h2 class="text-2xl font-medium mt-8 mb-4">Total Expenses:<span id="total-expenses">0</span></h2>
                       <h2 class="text-2xl font-medium mt-8 mb-4">Balance:<span id="balance">0</span></h2>
@@ -53,7 +55,7 @@
                 
                 <div class="my-4 text-center">
                     <label class="inline-block  text-right mr-5">Save:</label>
-                    <input id="saveinput" class="py-2 px-2 bg-slate-200 w-14" type="text" /> % <button id="save" class="bg-sky-600 text-white rounded-lg py-2 px-12 font-bold">Save</button>
+                    <input id="saveinput" class="py-2 px-2 bg-slate-200 w-14" type="number" /> % <button id="save" class="bg-sky-600 text-white rounded-lg py-2 px-12 font-bold">Save</button>
                     <h2 class="text-2xl font-medium mt-5 mb-4">Saving Amount: <span id="Saving">0</span></h2>
                     <h2 class="text-2xl font-medium mt-5 mb-4">Remaining Balance: <span id="remaining">0</span></h2>
                   </div>
